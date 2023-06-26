@@ -1,5 +1,7 @@
+"use strict";
+
 import * as mysql from "mysql2/promise";
-import getConnection from "./getConnection";
+import getConnection from "./getConnection.js";
 
 async function main(): Promise<void> {
   let connection: mysql.Connection | void;
@@ -16,7 +18,8 @@ async function main(): Promise<void> {
     await connection.query(`DROP TABLE IF EXISTS entries`);
     await connection.query(`DROP TABLE IF EXISTS users`);
 
-    //To do: crear la tabla de users.
+    console.log("Creando tablas...");
+
     await connection.query(`CREATE TABLE IF NOT EXISTS users(
         id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
         email VARCHAR(100) NOT NULL UNIQUE,
@@ -28,19 +31,17 @@ async function main(): Promise<void> {
         activated BOOLEAN DEFAULT FALSE
         )`);
 
-    //To do: crear la tabla de tweets.
     await connection.query(`CREATE TABLE IF NOT EXISTS entries(
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
       user_id int UNSIGNED NOT NULL,
       parent_entry_id int UNSIGNED,
-      FOREIGN KEY(parent_entry_id) REFERENCES entries_id,
+      FOREIGN KEY(parent_entry_id) REFERENCES entries(id),
       FOREIGN KEY(user_id) REFERENCES users(id),
       text VARCHAR(280) NOT NULL,
       pictures VARCHAR(100),
       creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )`);
 
-    //To do: crear la tabla de likes.
     await connection.query(`CREATE TABLE IF NOT EXISTS likes (
       id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
         user_id INT UNSIGNED NOT NULL,
