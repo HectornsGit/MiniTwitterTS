@@ -6,7 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "preinitDB": "tsc ./ddbb/initDB.ts",
-    "initDB": "node ./ddbb/initDB.js"
+    "initDB": "node ./ddbb/initDB.js",
+    "postinitDB": "del ./ddbb/*.js"
   },
   "keywords": [],
   "author": "",
