@@ -132,4 +132,4 @@ dist
 
 # transpiled .js files
 
-./MiniTwitterTS/backend/*.js
+./MiniTwitterTS/backend/*/*.js
