@@ -15,3 +15,5 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use(fileUpload());
+
+app.use(express.static("uploads"));
