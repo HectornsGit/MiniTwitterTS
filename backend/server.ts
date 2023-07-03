@@ -1,8 +1,8 @@
-import * as dotenv from "dotenv";
-import express from "express";
-import fileUpload from "express-fileupload";
-import morgan from "morgan";
-import cors from "cors";
+import dotenv = require("dotenv");
+import express = require("express");
+import fileUpload = require("express-fileupload");
+import morgan = require("morgan");
+import cors = require("cors");
 
 dotenv.config();
 const { PORT } = process.env;

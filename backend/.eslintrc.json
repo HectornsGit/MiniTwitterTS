@@ -7,9 +7,10 @@
   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "rules": {
     "no-unused-vars": "off"
   }

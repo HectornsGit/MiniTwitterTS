@@ -1,5 +1,5 @@
-import * as dotenv from "dotenv"; // Dependencia para manejar las variables de entorno cómodamente.
-import * as mysql from "mysql2/promise";
+import dotenv = require("dotenv"); // Dependencia para manejar las variables de entorno cómodamente.
+import mysql = require("mysql2/promise");
 dotenv.config(); // Carga el fichero .env en las variables de entorno de TS.
 
 //Obtenemos las variables de entorno de nuestro .env

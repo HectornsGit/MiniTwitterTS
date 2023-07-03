@@ -1,6 +1,6 @@
 "use strict";
 
-import * as mysql from "mysql2/promise";
+import mysql = require("mysql2/promise");
 import getConnection from "./getConnection.js";
 
 async function main(): Promise<void> {
