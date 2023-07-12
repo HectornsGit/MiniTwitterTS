@@ -4,7 +4,7 @@ import mysql = require("mysql2/promise");
 import getConnection from "./getConnection.js";
 
 async function main(): Promise<void> {
-  let connection: mysql.Connection | void;
+  let connection: mysql.PoolConnection | void;
   try {
     connection = await getConnection;
 
