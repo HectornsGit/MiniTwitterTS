@@ -1,3 +1,4 @@
+import { generateError } from "../../helpers";
 import getConnection from "../getConnection";
 import mysql = require("mysql2/promise");
 
@@ -7,7 +8,7 @@ export const selectUserByEmailQuery = async (email: string) => {
 
   try {
     if (typeof connection === "undefined") {
-      throw new Error("Error en la conexión con la base de datos");
+      throw generateError("Error en la conexión con la base de datos", 500);
     }
 
     const users = await connection.query(
@@ -16,7 +17,7 @@ export const selectUserByEmailQuery = async (email: string) => {
     );
 
     if (users.length < 1) {
-      throw new Error("Email Incorrecto");
+      throw generateError("Email Incorrecto", 404);
     }
 
     return users[0];
