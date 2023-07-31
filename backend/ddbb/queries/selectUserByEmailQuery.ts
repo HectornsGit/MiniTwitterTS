@@ -18,6 +18,7 @@ export const selectUserByEmailQuery = async (email: string) => {
     if (users.length < 1) {
       throw new Error("Email Incorrecto");
     }
+
     return users[0];
   } finally {
     if (connection) connection.release();

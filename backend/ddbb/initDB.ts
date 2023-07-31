@@ -5,9 +5,9 @@ import getConnection from "./getConnection.js";
 
 async function main(): Promise<void> {
   let connection: mysql.PoolConnection | void;
-  try {
-    connection = await getConnection;
+  connection = await getConnection;
 
+  try {
     if (typeof connection === "undefined") {
       throw new Error("Error en la conexión con la base de datos");
     }
@@ -53,6 +53,7 @@ async function main(): Promise<void> {
   } catch (error) {
     console.error(error);
   } finally {
+    if (connection) connection.release();
     console.log("Operación terminada");
   }
 }
