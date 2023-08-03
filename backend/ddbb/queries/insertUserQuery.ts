@@ -5,11 +5,9 @@ import getConnection from "../getConnection";
 import { generateError } from "../../helpers";
 import { selectUserByEmailQuery } from "./selectUserByEmailQuery";
 
-export const insertUserQuery = async (
-  email: string,
-  username: string,
-  password: string
-) => {
+export const insertUserQuery = async (user: iUser) => {
+  const { email, password, username } = user;
+
   //1: Comprobar si existe un usuario con ese email.
   const existingUser = await selectUserByEmailQuery(email);
 
