@@ -10,9 +10,13 @@ export const newUser = async (
   next: express.NextFunction
 ): Promise<void> => {
   try {
-    const { email, username, password } = req.body;
+    const newUser: iUser = {
+      email: req.body.email,
+      username: req.body.username,
+      password: req.body.password,
+    };
 
-    await insertUserQuery(email, username, password);
+    await insertUserQuery(newUser);
 
     res.send({
       status: "ok",
