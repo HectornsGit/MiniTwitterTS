@@ -1,10 +1,10 @@
-interface iUser {
+export interface iUser {
   email: string;
   password: string;
   username: string;
 }
 
-interface iRegisteredUser extends iUser {
+export interface iRegisteredUser extends iUser {
   id: number;
   bio?: string;
   avatar?: string;

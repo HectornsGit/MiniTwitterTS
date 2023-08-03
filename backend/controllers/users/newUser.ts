@@ -1,8 +1,9 @@
 "use strict";
-
 import express = require("express");
 
 import { insertUserQuery } from "../../ddbb/queries/insertUserQuery";
+
+import { iUser } from "../../interfaces/users";
 
 export const newUser = async (
   req: express.Request,

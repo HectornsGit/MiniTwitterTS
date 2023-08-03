@@ -5,6 +5,8 @@ import getConnection from "../getConnection";
 import { generateError } from "../../helpers";
 import { selectUserByEmailQuery } from "./selectUserByEmailQuery";
 
+import { iUser } from "../../interfaces/users";
+
 export const insertUserQuery = async (user: iUser) => {
   const { email, password, username } = user;
 
