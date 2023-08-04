@@ -1,7 +1,7 @@
 "use strict";
 import express = require("express");
 
-import { insertUserQuery } from "../../ddbb/queries/insertUserQuery";
+import { insertUserQuery } from "../../ddbb/queries/users/insertUserQuery";
 
 import { iUser } from "../../interfaces/users";
 
