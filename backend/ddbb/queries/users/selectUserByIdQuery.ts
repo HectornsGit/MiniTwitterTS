@@ -12,13 +12,13 @@ const selectUserByIdQuery = async (idUser: number) => {
     }
 
     //Seleccionamos al usuario segun su id en la base de datos.
-    const [users] = await connection.query(
+    const [users]: mysql.RowDataPacket[any] = await connection.query(
       `SELECT id, email, avatar, bio, password, username, registration_date FROM users WHERE id = ?`,
       [idUser]
     );
 
     //Lanzamos un error si no se encuentra al usuario con ese id
-    if ((users as Array<any>).length > 1) {
+    if (users.length > 1) {
       throw generateError("Usuario no encontrado", 404);
     }
 
