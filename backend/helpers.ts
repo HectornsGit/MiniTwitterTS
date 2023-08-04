@@ -7,7 +7,7 @@ import fs = require("fs/promises");
  */
 //Función que nos permite generar errores con código de error.
 //----------------------------------------------------------------------------------------------------------//
-import { ErrorResponse } from "./interfaces";
+import { ErrorResponse } from "./interfaces/errors";
 
 export const generateError = (
   message: string,
