@@ -16,6 +16,7 @@ export const generateError = (
   const error: ErrorResponse = { message, status };
   return error;
 };
+
 /**
  * ####################
  * ##  SAVE AVATAR   ##
