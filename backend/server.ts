@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(fileUpload());
 
 app.use(express.static("uploads"));
+
 //------------- Middlewares de usuario ------------------//
 import { newUser } from "./controllers/users/newUser";
 import { ErrorResponse } from "./interfaces/errors";
