@@ -7,9 +7,11 @@
   "scripts": {
     "preinitDB": "tsc ./ddbb/initDB.ts",
     "initDB": "node ./ddbb/initDB.js",
-    "postinitDB": "del ./ddbb/*.js",
+    "postinitDB": "del /s .\\ddbb\\*.js",
     "predev": "tsc server.ts",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "clean": "del *.js",
+    "postclean": "del /s .\\interfaces\\*.js .\\ddbb\\*.js .\\controllers\\*.js"
   },
   "keywords": [],
   "author": "",
